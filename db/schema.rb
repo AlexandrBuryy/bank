@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519110115) do
+ActiveRecord::Schema.define(version: 20150519130354) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20150519110115) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
+  create_table "deposit_types", force: :cascade do |t|
+    t.string   "kind"
+    t.integer  "percent"
+    t.integer  "min_sum"
+    t.integer  "currency_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "deposit_types", ["currency_id"], name: "index_deposit_types_on_currency_id"
 
   create_table "deposits", force: :cascade do |t|
     t.datetime "data_begin"

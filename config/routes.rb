@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+# # # # CREDIT DEPARTMENT # # # #
   root to: 'credit_department#index'
 
   get '/credit_department/add', to: 'credit_department#add_credit', as: 'new_credit_type'
@@ -13,58 +16,28 @@ Rails.application.routes.draw do
 
   delete '/credit_department/:id', to: 'credit_department#delete_credit', as: "delete_credit_type"
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+# # # # # # # # # # # # # # # #
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+# # # # DEPOSIT DEPARTMENT # # # #
+  get '/deposit_department/index', to: 'deposit_department#index', as: 'index'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get '/deposit_department/add', to: 'deposit_department#add_deposit', as: 'new_deposit_type'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get '/deposit_department/:id', to: 'deposit_department#details', as: "details_deposit_type"
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get '/deposit_department/:id/edit', to: 'deposit_department#edit_deposit', as: "edit_deposit_type"
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  post '/deposit_department', to: 'deposit_department#create_deposit', as: "create_deposit_type"
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  patch '/deposit_department/:id', to: 'deposit_department#update_deposit', as: "update_deposit_type"
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  delete '/deposit_department/:id', to: 'deposit_department#delete_deposit', as: "delete_deposit_type"
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+# # # # # # # # # # # # # # # #
+
+
+
+
+
 end

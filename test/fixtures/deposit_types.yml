@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  percent: 1
+  min_sum: 1
+  currency_id: 
+
+two:
+  kind: MyString
+  percent: 1
+  min_sum: 1
+  currency_id: 
