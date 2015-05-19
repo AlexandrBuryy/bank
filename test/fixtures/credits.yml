@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  currency: MyString
+  data_begin: 
+  percent: 1
+  sum: 1
+  max_sum: 1
+
+two:
+  kind: MyString
+  currency: MyString
+  data_begin: 
+  percent: 1
+  sum: 1
+  max_sum: 1

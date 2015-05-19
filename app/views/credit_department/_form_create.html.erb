@@ -1,0 +1,27 @@
+<%= form_for @credit_type, url: create_credit_type_path do |f| %>
+
+<div class="field">
+  <%= f.label 'Name' %>
+  <%= f.text_field :kind %>
+</div>
+
+<div class="field">
+  <%= f.label 'Currency' %>
+  <%= select_tag(:currency, options_for_select([['Rus', 'Ru'], ['Bel', 'Bel'], ['Euro', 'Euro'], ['Dollar', 'Dollar']])) %>
+</div>
+
+<div class="field">
+  <%= f.label 'Percent' %>
+  <%= number_field_tag :percent, 1, min: 0, max: 50 %> % 
+</div>
+
+<div class="field">
+  <%= f.label 'Sum' %>
+  <%= number_field_tag :max_sum, 20000, min: 0  %> денег
+</div>
+
+<div class="create_button">
+  <%= f.submit 'Create' %>
+</div>
+
+<% end %>

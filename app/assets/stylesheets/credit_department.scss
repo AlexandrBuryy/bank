@@ -1,0 +1,28 @@
+// Place all the styles related to the CreditDepartment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.field{
+  margin: 20px;
+}
+
+.create_button{
+  margin: 20px;
+  button{
+    color: #2002fb;  
+  } 
+}
+
+h1{
+  color: black; 
+}
+
+.credit_type{
+  border: 1px solid;
+  text-align: center;
+  font-family: 'Century Gothic';
+  width: 50%;
+  color: black; 
+  border-radius: 10%;
+  margin-left: 25%;
+  margin-bottom: 20px;
+}

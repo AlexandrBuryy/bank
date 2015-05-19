@@ -1,0 +1,17 @@
+<h1> Credit Department </h1>
+<hr>
+ <% @credit_types.each do |type|%>
+ <div class="credit_type">
+  <h3><%= type.kind %></h3>
+  <h3><%= type.percent %></h3>
+  <h3><%= type.max_sum %></h3>
+  <h3><%= Currency.find(type.currency_id).kind_name %></h3>
+
+  <%= link_to 'Detalis', details_credit_type_path(type) %><br/>
+  <%= link_to 'Edit', edit_credit_type_path(type) %><br/>
+  <%= link_to 'Destroy', delete_credit_type_path(type), method: :delete,
+                    data: { confirm: 'Are you sure, men?' } %>
+  </div>
+ <% end %>
+<hr>
+<%= link_to 'Add', new_credit_type_path %>

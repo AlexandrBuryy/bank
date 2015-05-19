@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  has_one: MyString
+  : 
+  percent: 1
+  max_sum: 1
+
+two:
+  kind: MyString
+  has_one: MyString
+  : 
+  percent: 1
+  max_sum: 1

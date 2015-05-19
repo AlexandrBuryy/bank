@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dollars: 1
+  euro: 1
+  bel_rub: 1
+  rus_rub: 1
+
+two:
+  dollars: 1
+  euro: 1
+  bel_rub: 1
+  rus_rub: 1
