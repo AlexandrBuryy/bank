@@ -2,9 +2,13 @@
 <h1><%= @credit_type.kind %></h1>
 <hr>
 <h1 style="color:blue">Percent</h1>
-<h3><%= @credit_type.percent %></h3>
+<h3><%= @credit_type.percent %> %</h3>
+<hr>
+<h1 style="color:blue">Duration</h1>
+<h3><%= @credit_type.credit_duration%> month</h3>
+<hr>
 <h1 style="color:blue">Max sum</h1>
-<h3><%= @credit_type.max_sum %></h3>
+<h3><%= @credit_type.max_sum %> <%= Currency.find(@credit_type.currency_id).kind_name %></h3>
 <hr>
 <h1 style="color:blue">Was Created at</h1>
 <h3><%= @credit_type.created_at %></h3>

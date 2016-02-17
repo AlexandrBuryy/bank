@@ -15,6 +15,12 @@
   <%= number_field_tag :percent, @credit_type.percent , min: 0, max: 50 %> % 
 </div>
 
+
+<div class="field">
+  <%= f.label 'Duration' %>
+  <%= number_field_tag :credit_duration, @credit_type.credit_duration , min: 1, max: 60 %> month
+</div>
+
 <div class="field">
   <%= f.label 'Sum' %>
   <%= number_field_tag :max_sum, @credit_type.max_sum , min: 0  %> денег

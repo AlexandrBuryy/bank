@@ -1,0 +1,13 @@
+<% count = 0 %>
+<% @credits.each do |crd| %>
+    <h1><%= crd.kind %></h1>
+    <% if current_client.profit_per_month >= ExchangeDepartment.Exchange(crd.currency_id, Currency.find(current_client.profit_currency_id),(crd.max_sum.to_f/crd.credit_duration)*crd.percent) %>
+    <span class="label label-success"><%= count += 1 %></span>
+    <%= link_to "Show information", get_credit_information_path(crd)%> |
+    <%= link_to "Get", checkout_credit_path(crd) %> 
+    <% else %>
+    <span class="label label-warning"><%= count += 1 %></span>
+    <%= link_to "Show information", get_credit_information_path(crd)%>
+    <% end %>
+    <hr>
+<% end %>

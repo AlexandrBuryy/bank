@@ -16,6 +16,11 @@
 </div>
 
 <div class="field">
+  <%= f.label 'Duration' %>
+  <%= number_field_tag :deposit_duration, @deposit_type.deposit_duration , min: 0, max: 50 %> month 
+</div>
+
+<div class="field">
   <%= f.label 'Sum' %>
   <%= number_field_tag :min_sum, @deposit_type.min_sum , min: 0  %> денег
 </div>

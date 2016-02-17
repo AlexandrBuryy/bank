@@ -35,9 +35,7 @@ textarea {
   resize: vertical;
 }
 
-.container {
-  top: 10%;
-}
+
 
 .center {
   text-align: center;
@@ -115,4 +113,35 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.message {
+  border: 1px solid;
+  border-color: #555;
+  border-radius: 2%;
+}
+
+.client_credits{
+  float: left;
+}
+
+.client_deposits {
+  float: right;
+}
+
+.meow {
+  display: inline;
 }

@@ -1,0 +1,15 @@
+// Place all the styles related to the Creditors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.queries{
+  margin-left: 33%;
+  margin-bottom: 40px;
+  width: 35%;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 17%;
+  background-color: #ccc;
+}

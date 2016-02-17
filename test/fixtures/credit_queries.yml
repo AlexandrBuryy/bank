@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sum: 
+  credit_type: 
+  client_id: 
+
+two:
+  sum: 
+  credit_type: 
+  client_id: 

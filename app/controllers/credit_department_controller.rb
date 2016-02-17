@@ -9,11 +9,11 @@ class CreditDepartmentController < ApplicationController
 
   def create_credit
     currency_id = Currency.find_by_kind_name(params[:currency]).id
-    @credit_type = CreditType.new :kind => params[:credit_type][:kind], :max_sum => params[:max_sum], :percent => params[:percent], :currency_id => currency_id
+    @credit_type = CreditType.new :kind => params[:credit_type][:kind], :max_sum => params[:max_sum], :percent => params[:percent], :credit_duration => params[:credit_duration], :currency_id => currency_id
 
     respond_to do |format|
       if @credit_type.save
-        format.html { redirect_to root_path, notice: 'Credit was successfully created.' }
+        format.html { redirect_to credit_index_path, notice: 'Credit was successfully created.' }
         format.json { render :show, status: :created, location: @credit_type}
       else
         format.html { render :new }
@@ -31,15 +31,16 @@ class CreditDepartmentController < ApplicationController
   end
 
   def update_credit
+    currency_id = Currency.find_by_kind_name(params[:currency]).id
     @credit_type = CreditType.find(params[:id])
-    @credit_type.update :kind => params[:credit_type][:kind], :max_sum => params[:max_sum], :percent => params[:percent]
-    redirect_to root_path
+    @credit_type.update :kind => params[:credit_type][:kind], :max_sum => params[:max_sum], :percent => params[:percent], :credit_duration => params[:credit_duration], :currency_id => currency_id
+    redirect_to credit_index_path
   end
 
   def delete_credit
     @credit_type = CreditType.find(params[:id])
     @credit_type.destroy
-    redirect_to root_path
+    redirect_to credit_index_path
   end
 
 end

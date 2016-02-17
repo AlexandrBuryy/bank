@@ -1,0 +1,16 @@
+<h4 style="color:blue">Kind</h1>
+<h5><%= @deposit_type.kind %></h1>
+<hr>
+<h4 style="color:blue">Percent</h1>
+<h5><%= @deposit_type.percent %> %</h3>
+<hr>
+<h4 style="color:blue">Duration</h1>
+<h5><%= @deposit_type.deposit_duration%> month</h3>
+<hr>
+<h4 style="color:blue">Max sum</h1>
+<h5><%= @deposit_type.min_sum %> <%= Currency.find(@deposit_type.currency_id).kind_name %></h3>
+<hr>
+<h4 style="color:blue">Was Created at</h1>
+<h5><%= @deposit_type.created_at %></h3>
+
+<%= link_to "Checkout Credit", checkout_deposit_path(@deposit_type) %>

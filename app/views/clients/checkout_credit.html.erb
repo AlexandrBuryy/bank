@@ -1,0 +1,17 @@
+<h3 class="well well-small" style="text-align: center;"> Checkout credit <%= @credit_type.kind %> </h3>
+<h5 style="text-align: center;">Ask you to accept my query! Sincerely, <%= current_client. name%></h5>
+<%= form_for @credit_query, url: query_credit_path do |f| %>
+
+<%=  hidden_field_tag :credit_type_id, @credit_type.id %>
+<%=  hidden_field_tag :client_id, current_client.id %>
+<div class="field">
+  <%= f.label 'Sum' %>
+  <%= number_field_tag :sum, 1, min: 1, max: @credit_type.max_sum %> 
+</div>
+
+
+<div class="create_button">
+  <%= f.submit 'Send' %>
+</div>
+
+<% end %>

@@ -1,0 +1,24 @@
+<% count = 0 %>
+<% @deposits.each do |dps| %>
+    <h1><%= dps.kind %></h1>   
+    <% case dps.currency_id %>
+      <% when 1 %>
+      <% appropriate_bill = current_client.bill_rus%>
+      <% when 2 %>
+      <% appropriate_bill = current_client.bill_bel%>
+      <% when 3 %>
+      <% appropriate_bill = current_client.bill_euro%>
+      <% when 4 %>
+      <% appropriate_bill = current_client.bill_dollars%>
+    <%end%>
+
+    <% if appropriate_bill >= dps.min_sum %>
+    <span class="label label-success"><%= count += 1 %></span>
+    <%= link_to "Show information", get_deposit_information_path(dps)%> |
+    <%= link_to "Get", checkout_deposit_path(dps) %> 
+    <% else %>
+    <span class="label label-warning"><%= count += 1 %></span>
+    <%= link_to "Show information", get_deposit_information_path(dps)%> 
+    <% end %>
+    <hr>
+<% end %>

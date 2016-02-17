@@ -1,3 +1,4 @@
 class DepositType < ActiveRecord::Base
-  belongs_to :currency
+  has_one :currency
+  belongs_to :deposit
 end

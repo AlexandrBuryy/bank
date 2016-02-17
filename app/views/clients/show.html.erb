@@ -1,0 +1,38 @@
+<span class="label label-info"><%= Client.define_role current_client.role %></span>
+<div class="page-header well">
+  <h1><%= @client.name %> <small><%= @client.email %></small></h1>
+</div>
+
+<div class="btn-group">
+  <% if current_client.role == 0 or current_client.role == 2%>
+  | <%= link_to "Get credit", get_credit_path%> |
+  <% end %>
+  <% if current_client.role == 0 or current_client.role == 1%>
+  <%= link_to "Get deposit", get_deposit_path%> |
+  <% end %>
+  <% if current_client.role == 1%>
+  <%= link_to "Credit maintaining", credit_index_path %> |
+  <% end %>
+  <% if current_client.role == 2%>
+  <%= link_to "Deposit maintaining", deposit_index_path %> |
+  <% end %>
+  <%= link_to "Show information", client_information_path(@client)%> | <!--Буду смотреть инфу других, но скрывать, что не надо-->
+  <%= link_to "Messages", client_messages_path %> |
+
+  <% if current_client.role == 1%>
+  <%= link_to "Check credits", creditor_index_path %> |
+  <% else if current_client.role == 2 %>
+  <%= link_to "Check deposits", deposer_index_path %> |
+  <%end%>
+  <% end %>
+  <%= link_to "Currency bill exchange", exchange_path(current_client) %> |
+</div>
+
+
+<hr>
+
+
+<!--
+<%= token =  @client.remember_token %>
+<%= Client.encrypt cookies[:remember_token] %>
+-->

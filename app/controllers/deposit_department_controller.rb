@@ -9,11 +9,11 @@ class DepositDepartmentController < ApplicationController
 
   def create_deposit
     currency_id = Currency.find_by_kind_name(params[:currency]).id
-    @deposit_type = DepositType.new :kind => params[:deposit_type][:kind], :min_sum => params[:min_sum], :percent => params[:percent], :currency_id => currency_id
+    @deposit_type = DepositType.new :kind => params[:deposit_type][:kind], :min_sum => params[:min_sum], :percent => params[:percent], :deposit_duration => params[:deposit_duration], :currency_id => currency_id
 
     respond_to do |format|
       if @deposit_type.save
-        format.html { redirect_to index_path, notice: 'Credit was successfully created.' }
+        format.html { redirect_to deposit_index_path, notice: 'Credit was successfully created.' }
         format.json { render :show, status: :created, location: @deposit_type}
       else
         format.html { render :new }
@@ -31,14 +31,15 @@ class DepositDepartmentController < ApplicationController
   end
 
   def update_deposit
+    currency_id = Currency.find_by_kind_name(params[:currency]).id
     @deposit_type = DepositType.find(params[:id])
-    @deposit_type.update :kind => params[:deposit_type][:kind], :min_sum => params[:min_sum], :percent => params[:percent]
-    redirect_to index_path
+    @deposit_type.update :kind => params[:deposit_type][:kind], :min_sum => params[:min_sum], :percent => params[:percent], :deposit_duration => params[:deposit_duration], :currency_id => currency_id
+    redirect_to deposit_index_path
   end
 
   def delete_deposit
     @deposit_type = DepositType.find(params[:id])
     @deposit_type.destroy
-    redirect_to index_path
+    redirect_to deposit_index_path
   end
 end
